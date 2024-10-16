@@ -1,0 +1,7 @@
+POST http://127.0.0.1:5000/register HTTP/1.1
+Content-Type: application/json 
+
+{
+    "phone_number": "+917148357511",
+    "location": "Banglore"
+}
