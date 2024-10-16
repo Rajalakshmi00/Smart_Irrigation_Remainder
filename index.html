@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Irrigation Reminder System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Irrigation Reminder System</h1>
+        <h2>Welcome!</h2>
+        <p>Please register to start using the system.</p>
+        
+        <form id="registration-form">
+            <label for="phone_number">Mobile Number:</label>
+            <input type="text" id="phone_number" name="phone_number" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div id="message"></div>
+        <p>Already have an account? <a href="login.html">Login here</a></p> <!-- Link to the login page -->
+    </div>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent the default form submission
+
+            const phoneNumber = document.getElementById('phone_number').value;
+            const location = document.getElementById('location').value;
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ phone_number: phoneNumber, location: location })
+                });
+
+                const data = await response.json();
+                document.getElementById('message').textContent = data.message;
+
+                // Redirect to login page on successful registration
+                if (data.success) {
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 2000); // 2 seconds delay before redirecting
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('message').textContent = 'An error occurred. Please try again.';
+            }
+        });
+    </script>
+</body>
+</html>

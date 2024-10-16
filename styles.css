@@ -1,0 +1,101 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://www.example.com/agriculture-background.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    color: #2c3e50;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    max-width: 500px;
+    margin: 100px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #27ae60;
+    font-size: 32px;
+}
+
+h2 {
+    text-align: center;
+    color: #2980b9;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+    font-size: 16px;
+    outline: none;
+}
+
+button {
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #2ecc71;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url('https://www.example.com/leaf-icon.png') no-repeat center;
+    background-size: contain;
+}
+
+#message {
+    margin-top: 20px;
+    color: #e74c3c;
+    font-size: 14px;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+a {
+    color: #27ae60;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
